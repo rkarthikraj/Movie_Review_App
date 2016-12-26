@@ -22,7 +22,7 @@ import java.net.URL;
 public class MainActivity_API extends AppCompatActivity {
 
     EditText et;
-    TextView tv;
+    TextView tv2,tv3,tv4,tv5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,7 +31,11 @@ public class MainActivity_API extends AppCompatActivity {
         setContentView(R.layout.activity_main__api);
 
         et = (EditText) findViewById(R.id.inputTitle);
-        tv = (TextView) findViewById(R.id.tv);
+        tv2 = (TextView) findViewById(R.id.tv2);
+        tv3 = (TextView) findViewById(R.id.tv3);
+        tv4 = (TextView) findViewById(R.id.tv4);
+        tv5 = (TextView) findViewById(R.id.tv5);
+
 
     }
 
@@ -87,7 +91,11 @@ public class MainActivity_API extends AppCompatActivity {
             String rating = "";
             try {
                 json = new JSONObject(result);
-                tv.setText("Director of the movie is " + json.getString("Director"));
+                tv2.setText("Director of the movie is " + json.getString("Director"));
+                tv3.setText("Released Date " + json.getString("Released"));
+                tv4.setText("Runtime" + json.getString("Runtime"));
+                tv5.setText("IMDB Rating " + json.getString("imdbRating"));
+
             }
             catch (JSONException j)
             {
